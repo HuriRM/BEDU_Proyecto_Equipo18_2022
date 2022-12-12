@@ -33,6 +33,9 @@ goles_visitante <- sp1$FTAG
 #4. Consulta cómo funciona la función `table` en `R`. Para ello, puedes ingresar los comandos `help("table")` o `?table` para leer la documentación.
 ?table()
 ?count
+
+table(goles_en_casa,goles_visitante)
+
 #5. Responde a las siguientes preguntas:
 #  a) ¿Cuántos goles tuvo el partido con mayor empate? El partido con mayor empate fue 4-4, en una ocasión.
 

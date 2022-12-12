@@ -42,9 +42,9 @@ la distribución pareciera tener un sesgo a la derecho con varios 'outliers' "
 "3) Calcula e interpreta la desviación estándar y los cuartiles de la distribución de
 `Mediciones'
 
-R = De acuerdo a la desviacion estandar los datos se encuentran dispersos a
-comparacion con la media. La diferencia entre el cuartil 1,2 y 3 es similar entre ellos, 
-por lo que es probable que la mayoría de los datos que causan el sesgo (outliers) se encuentran
+R = De acuerdo a la desviación estandar los datos se encuentran dispersos a
+comparación con la media. La diferencia entre el cuartil 1,2 y 3 es similar entre ellos, 
+por lo que es probable que la mayoría de los datos que causan el sesgo (outliers) se encuentren
 en el 25% superior."
 
 de.mediciones <- sd(df.2$Mediciones) #53.77
@@ -58,7 +58,7 @@ R = Aunque las 3 categorías están sesgadas la que más ocasiona sesgo es C3"
 
 hist.mediciones <- ggplot(df.2, aes(x = df.2$Mediciones, fill = df.2$Categoria)) +
   geom_histogram(alpha = 0.5, position = "identity")
-hist.mediciones <- hist.mediciones + labs(fill = "Categorias", title = "Distribucion de Mediciones por Categoria", x = "Mediciones", y = "Cantidad")
+hist.mediciones <- hist.mediciones + labs(fill = "Categorías", title = "Distribución de Mediciones por Categoría", x = "Mediciones", y = "Cantidad")
 hist.mediciones
 
 "5) Con ggplot, realiza un boxplot separando la distribución de `Mediciones`
@@ -74,6 +74,6 @@ derecha, al igual que los outliers de todas las categorías"
 
 boxplot.mediciones <- ggplot(df.2, aes(x = df.2$Categoria, y = df.2$Mediciones, fill = df.2$Grupo)) +
   geom_boxplot() +
-  labs(fill = "Grupo", title = "Mediciones por Categoria y Grupo", x = "Categorias", y = "Mediciones") +
+  labs(fill = "Grupo", title = "Mediciones por Categoría y Grupo", x = "Categorías", y = "Mediciones") +
   scale_fill_discrete(labels = c("Sin grupo", "Con grupo"))
 boxplot.mediciones

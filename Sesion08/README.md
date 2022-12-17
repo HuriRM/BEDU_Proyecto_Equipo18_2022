@@ -56,18 +56,18 @@ NOTA: Todo tu planteamiento deberá estar correctamente desarrollado y deberás 
 1.- Plantea el problema del caso.
 Con base a los obtenidos por la ENSANUT, el centro de Salud nutricional esta interesado en:
 
-a) Analizar estadísticamente y probabilísticamente los patrones de gasto en alimentos saludables
-y no saludables en los hogares mexicanos con base en:
+      a) Analizar estadísticamente y probabilísticamente los patrones de gasto en alimentos saludables
+      y no saludables en los hogares mexicanos con base en:
 
-      I. Su nivel socioeconómico.
+            I. Su nivel socioeconómico.
 
-      II.Si el hogar tiene recursos financieros extrar al ingreso.
+            II.Si el hogar tiene recursos financieros extrar al ingreso.
 
-     III. Si presenta o no inseguridad alimentaria.
+            III. Si presenta o no inseguridad alimentaria.
 
-b) La generación de un modelo que le permita identificar los determinantes socioeconómicos de la
-inseguridad alimentaria.
+      b) La generación de un modelo que le permita identificar los determinantes socioeconómicos de la
+      inseguridad alimentaria.
 
-c) Evaluar si existe evidencia estadística para determinar si los hogares con menor nivel
-socioeconómico tienden a gastar más en productos no saludables que las personas con
-mayores niveles socioeconómicos.
+      c) Evaluar si existe evidencia estadística para determinar si los hogares con menor nivel
+      socioeconómico tienden a gastar más en productos no saludables que las personas con
+      mayores niveles socioeconómicos.

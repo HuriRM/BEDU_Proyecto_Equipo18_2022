@@ -19,5 +19,5 @@ Proyecto final M2 del Equipo 18 como parte de la acreditación del Módulo "Esta
  - [`Sesión 4:` Probabilidad y funciones de distribución](Sesion04/Postwork04_Equipo18.R) 
  - [`Sesión 5:` Teorema del límite central e inferencia estadística](Sesion05/Postwork05_Equipo18.R) 
  - [`Sesión 6:` Regresión lineal y clasificación](Sesion06/Postwork06_Equipo18.R)
- - [`Sesión 7:` Series de tiempo](Sesion-07/Readme.md) 
+ - [`Sesión 7:` Series de tiempo](Sesion07/Postwork07_Equipo18.R) 
  - [`Sesión 8:` Repositorios, control de cambios y conexión con bases de datos](Sesion-08/Readme.md)

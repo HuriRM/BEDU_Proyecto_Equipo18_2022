@@ -2,6 +2,15 @@
 
 Proyecto final M2 del Equipo 18 como parte de la acreditación del Módulo "Estadística y Programación con R" del curso "Data Science para Profesionistas" de Santander Universidades y BEDU
 
+## :diamonds: Miembros del Equipo 18
+- Silvia Fernández Sabido
+- Yutzil Lora Cabrera
+- Norma Paulina López Zamora
+- Ricardo Alejandro Gutiérrez Rocha
+- José Miguel Carreño Gómez
+- Hurí Rodríguez Morlet
+
+
 ## :mortar_board: Postworks
  
  - [`Sesión 1:` Introducción a R](Sesion01/Postwork01_Equipo18.R) 

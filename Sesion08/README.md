@@ -128,7 +128,7 @@ Cabe mencionar que la ENSANUT 2012 se aplicó a diferentes niveles socioeconómi
 
 Los datos también nos dicen que el 80.98% no recibe ingresos extra a su salario y el 19.02% sí los recibe.
 
-### Casos con Inseguridad Alimentaria.
+### Casos con Inseguridad Alimentaria
 
 Considerando únicamente los casos donde existe Inseguridad Alimentaria (74.09%), observamos lo siguiente:
 

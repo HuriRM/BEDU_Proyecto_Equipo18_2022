@@ -76,10 +76,10 @@ mayores niveles socioeconómicos.
 
 Analizando la base de datos, se observa valores faltantes con la siguiente proporción por cada variable:
 
-ln_alns: 42.89% de NAs
-edadjef: 12.29% de NAs
-sexojef: 12.23% de NAs
-ln_als: 1.92% de NAs
+- ln_alns: 42.89% de NAs
+- edadjef: 12.29% de NAs
+- sexojef: 12.23% de NAs
+- ln_als: 1.92% de NAs
 
 Para el manejo de datos faltantes existen dos opciones:
 

@@ -196,7 +196,7 @@ Modelo base:
 
 ```R
 lm.s <- lm(ln_als ~ numpeho + añosedu + ln_alns, df.c)
-summary(lm
+summary(lm)
 ```
 Que tiene una R-cuadrada ajustada = 0.189
 

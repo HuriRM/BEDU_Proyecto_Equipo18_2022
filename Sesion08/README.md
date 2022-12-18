@@ -128,6 +128,33 @@ Cabe mencionar que la ENSANUT 2012 se aplicó a diferentes niveles socioeconómi
 
 Los datos también nos dicen que el 80.98% no recibe ingresos extra a su salario y el 19.02% sí los recibe.
 
+### Casos con Inseguridad Alimentaria.
+
+Considerando únicamente los casos donde existe Inseguridad Alimentaria (74.09%), observamos lo siguiente:
+
+El sexo del jefe de familia es Hombre en 74.73% de los casos y es Mujer en un 25.27% de los casos.
+
+La inseguridad alimentaria se presenta en todo los niveles socioeconómicos con la siguiente proporción:
+
+- 26.18% pertenece a un Nivel Socioeconómico Bajo
+- 23.67% a un Nivel Socioeconómico Medio Bajo
+- 21.30% a un Nivel Socioeconómico Medio
+- 17.47% a un Nivel Socioeconómico Medio Alto
+- 11.36% a un Nivel Socioeconómico Alto. 
+
+Claramente se puede observar que el porcentaje de Inseguridad Alimentaria disminuye mientras más alto sea el nivel socioeconómico.
+
+Respecto a la zona geográfica donde existe Inseguridad Alimentaria, el 61.1% habita en Zona Urbana y el 38.9% habita en Zona Rural.
+Teniendo en cuenta que el total de observaciones es de 35818 y que solo en 26541 se presenta IA, es decir, en el 74.09%, es posible que en 7 de cada 10 hogares exista inseguridad alimentaria.
+
+De las familias que cuentan con ingresos extra (6814 obs), el 80.52% presenta inseguridad alimentaria y el 19.47% no presenta Inseguridad Alimentaria. Sabiendo que este ingreso extra al salario se debe a algún tipo de apoyo económico, nos da una idea de la efectividad y alcance que tienen estos programas pudiendo tomar estos datos para encuestas futuras y evaluar el rendimiento de los programas de apoyo, comprobar si aumenta o disminuye este indicador.
+
+Volviendo a la muestra que contiene todos los casos, después de crear boxplots para observar el gasto de alimentos saludables y no saludables para cada nivel socioeconómico, se observa como en el boxplot de Ln Gasto en Alimentos Saludables pareciera incrementar el gasto mientras más alto sea el Nivel Socioeconómico. Sin embargo, no es tan marcado este mismo patrón para Ln Gasto en Alimentos No Saludables.
+
+Y por último, al graficar por localidad de residencia, el porcentaje de consumidores de alimentos saludables parece ser mayor en localidades urbanas en comparación con las rurales.
+
+
+
 
 ## Referencias
 

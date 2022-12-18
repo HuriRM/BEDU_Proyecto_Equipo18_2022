@@ -59,11 +59,11 @@ Con base a los obtenidos por la ENSANUT, el centro de Salud nutricional esta int
 a) Analizar estadísticamente y probabilísticamente los patrones de gasto en alimentos saludables
 y no saludables en los hogares mexicanos con base en:
 
-      I. Su nivel socioeconómico.
+ I. Su nivel socioeconómico.
 
-      II.Si el hogar tiene recursos financieros extrar al ingreso.
+ II.Si el hogar tiene recursos financieros extrar al ingreso.
 
-      III. Si presenta o no inseguridad alimentaria.
+ III. Si presenta o no inseguridad alimentaria.
 
 b) La generación de un modelo que le permita identificar los determinantes socioeconómicos de la
 inseguridad alimentaria.
@@ -76,10 +76,10 @@ mayores niveles socioeconómicos.
 
 Analizando la base de datos, se observa valores faltantes con la siguiente proporción por cada variable:
 
-ln_alns:	42.89% de NA’s
-edadjef:	12.29% de NA's
-sexojef:	12.23% de NA's
-ln_als: 		 1.92% de NA's
+ln_alns: 42.89% de NAs
+edadjef: 12.29% de NAs
+sexojef: 12.23% de NAs
+ln_als: 1.92% de NAs
 
 Para el manejo de datos faltantes existen dos opciones:
 
@@ -94,6 +94,39 @@ Debido a que, la variable edadjef y ln_als muestran probable sesgo, se utiliza l
 
 Para el caso del sexo, se hace uso de la funcion complete.cases ya que al evaluar entre las ventajas/desventajas de imputar datos u omitirlos, se decidió omitir el 12.23% de la base de datos original.
 
+Para el correcto análisis de la información se decide factorizar las siguientes variables:
+
+- nse5f con etiquetas ordinales: "Bajo", "Medio Bajo", "Medio", "Medio Alto" y  "Alto"
+- area con etiquetas “Zona urbana” y “Zona rural”
+- refin con etiquetas “Si” y ”No”
+- sexo con etiquetas “Hombre” y ”Mujer”
+- IA con etiquetas "No presenta IA" y "Presenta IA"
+
+Partiendo de una base de datos de 40 809 observaciones, tras el proceso de limpieza de datos, imputación de datos y eliminación de filas, el tamaño de la muestra probabilística es de 35 818 observaciones para cada una de las 10 variables (descritas al inicio del script), las cuales permiten contar con estimaciones en un conjunto amplio de indicadores sobre la inseguridad alimentaria en México de acuerdo a la ENSANUT 2012.
+
+Tras analizar la nueva base de datos y obtener las medidas de tendencia central, desviación estándar, percentiles, rangos intercuartílicos y generando distintas graficas, la información nos empieza a dar las primeras perspectivas sobre la ENSANUT 2012 y la situación en México.
+
+Considerando que cada observación contenida en la base de datos de la ENSANUT 2012 fue generada hogar por hogar, el promedio de la edad del jefe/a de  familia es de 49 años, teniendo el cuartil inferior (25%) debajo de los 37 años, el cuartil mediano (50%) debajo de los 47 años y el cuartil superior (75%) debajo de los 60 años. Sabemos que la edad mínima del jefe de familia fue de 18 años y la máxima encontrada fue de 111 años, teniendo valores atípicos al sobrepasar el Q3 por más de 1.5 veces el IQR = 23 años.
+
+Comparando los promedios se observa que en la muestra de estudio, el gasto en alimentos saludables tiene un promedio mayor (ln_alns 6.05 > ln_als 4.12) lo cual no necesariamente representa que exista un mayor consumo de estos alimentos saludables, si no la posible representación del costo que pueden tener estos alimentos.
+
+Si fuese el costo el condicionante del aumento en el gasto de alimentos saludables, seria mas fácil la adquisicion de alimentos no saludables lo cual podría tener influencia en la inseguridad alimentaria pues normalmente estos alimentos son hipercalóricos pero deficientes en macro y micro nutrientes.
+
+Considerando que la ENSANUT 2012 nos proporciona los datos particulares de cada uno de los 35818 hogares encuestados, vemos que en un 75.26% el jefe de familia es Hombre y en un 24.74% es Mujer. El promedio de los años de educación del jefe/a de familia es de 9 años, lo cual traducido al sistema educativo mexicano, correspondiendo al nivel Secundaria (6 años de primaria más 3 de secundaria). Teniendo en cuenta que comúnmente los ingresos están relacionados con el nivel de educación de las personas, esto nos puede dar una idea de la facilidad/dificultad con la que las personas puedan tener y mantener una alimentación sana. 
+
+Otra variable relevante de la ENSANUT 2012 es el número de personas en el hogar, pues la dieta que se presente en un hogar será diferente para el número de personas en el hogar donde se observa que en promedio por hogar hay 4 habitantes, siendo esto también la moda de la variable. 
+
+Por último, los datos de la muestra corresponden a 23075 hogares de la zona urbana con un 64.42% y 12743 hogares en la zona rural con un 35.57%.
+
+Cabe mencionar que la ENSANUT 2012 se aplicó a diferentes niveles socioeconómicos con la siguientes proporción: 
+
+- 22.28% pertenece a un nivel socioeconómico Bajo,
+- 21.34% a un nivel socioeconómico Medio Bajo.
+- 20.25%, a un nivel socioeconómico Medio.
+- 19.12%, a un Nivel Socioeconómico Medio Alto.
+- 16.9%, a un Nivel Socioeconómico Alto.
+
+Los datos también nos dicen que el 80.98% no recibe ingresos extra a su salario y el 19.02% sí los recibe.
 
 
 ## Referencias

@@ -177,8 +177,62 @@ Para resolver este problema se realizó una prueba de t de Student y el resultad
 t = -1.5016, df = 35817, p-value = 0.1332
 
 Conclusión: Con un nivel de confianza del 95%, no se rechaza la hipótesis nula, por lo que el promedio calculado por el ENSANUT del número de habitantes por hogar es igual al promedio del número de habitantes en esta muestra"
+
+
+Hipótesis 2. El gasto en alimentos saludables es igual en los diferentes niveles socioeconómicos
+
+Planteamiento de hipótesis:
+
+- Ho: prom_ln_als_nse5f1 = prom_ln_als_nse5f2 = prom_ln_als_nse5f3 = prom_ln_als_nse5f4 = prom_ln_als_nse5f5 
+- Ha: prom_ln_als_nse5f1 != prom_ln_als_nse5f2 != prom_ln_als_nse5f3 != prom_ln_als_nse5f4 != prom_ln_als_nse5f5
+
+Para resolver este problema se realizó una prueba ANOVA y el resultado obtenido fue el siguiente:
+
+F value = 1277, Df = 4, Pr(>F) = <2e-16
+
+Con un nivel de confianza del 95%, se rechaza la hipótesis nula, por lo que, hay evidencia estadística de que el gasto en alimentos saludables es diferente en al menos un nivel socioeconómico. Para determinar entre qué grupos hay diferencias se procede a realizar una prueba posthoc. Observando que hay una diferencia significativa con un p = <2e-16 entre cada nivel socioeconómico. La prueba posthoc nos permute concluir, con un nivel de confianza del 95%, que existe evidencia estadística de que el gasto en alimentos saludables es diferente entre todos los niveles socioeconómicos.
+
+Hipótesis 3. Evaluar si existe evidencia estadística para determinar si los hogares con menor nivel socioeconómico tienden a gastar más en productos no saludables que los hogares con mayores niveles socioeconómicos
+
+Planteamiento de hipótesis de varianzas:
+
+- Ho: var.nse5f1.ln_alns = var.nse5f5.ln_alns
+- Ha: var.nse5f1.ln_alns != var.nse5f5.ln_alns
+
+Para resolver este problema se realizó una prueba para determinar que las varianzas son iguales, donde se obtuvo una p = <2.2e-16, por lo que, con un nivel de confianza del 95%, existe evidencia estadística para rechazar la hipótesis nula, por lo que las varianzas son diferentes.
+
+Planteamiento de hipótesis:
+
+- Ho: prom.nse5f1.ln_alns = prom.nse5f5.ln_alns
+- Ha: prom.nse5f1.ln_alns != prom.nse5f5.ln_alns
+
+Para resolver este problema se realizó una prueba t de Student de doble cola, donde se obtuvo una p = <2.2e-16, por lo que, con un nivel de confianza del 95%, existe evidencia estadística para rechazar la hipótesis nula, por lo que la evidencia parece indicar que el gasto en alimentos no saludables entre el nivel socioeconómico bajo y alto son diferentes.
+
+Se calcularon las medias de gastos en alimentos no saludables y saludables por nivel socioeconómico. 
+
+Hipótesis 4: El promedio del gasto en alimentos no saludables en un nivel socioeconomico bajo es mayor que el promedio del gasto en alimentos no saludables en un nivel socioeconómico alto. 
+
+Planteamiento de hipótesis:
+
+- Ho: prom.ln_alns.nse5f1(3.93) <= prom.ln_alns.nse5f5
+- Ha: prom.ln_alns.nse5f1(3.93) > prom.ln_alns.nse5f5
+
+Para resolver este problema se realizo una prueba t de Student de cola superior, en el cual se obtuvo una p = <2.2e-16. Por lo que se concluyó, que con un nivel de confianza del 95%, existe evidencia estadística para rechazar la hipótesis nula, por lo que el promedio del gasto en alimentos no saludables en un nivel socioeconómico bajo es mayor que en un nivel socioeconómico alto.
+
+Hipótesis 5: El gasto en alimentos NO saludables es igual en los diferentes niveles socioeconómicos.
+
+Planteamiento de hipótesis:
+
+- Ho: prom_ln_alns_nse5f1 = prom_ln_alns_nse5f2 = prom_ln_alns_nse5f3 = prom_ln_alns_nse5f4 = prom_ln_alns_nse5f5 
+- Ha: prom_ln_alns_nse5f1 != prom_ln_alns_nse5f2 != prom_ln_alns_nse5f3 != prom_ln_alns_nse5f4 != prom_ln_alns_nse5f5
+
+Para resolver este problema se realizó una prueba ANOVA y el resultado obtenido fue el siguiente:
+
+F value = 501, Df = 4, Pr(>F) = <2e-16
+
+Con un nivel de confianza del 95%, se rechaza la hipótesis nula, por lo que, hay evidencia estadística de que el gasto en alimentos no saludables es diferente en al menos un nivel socioeconómico. Para determinar entre qué grupos hay diferencias se procede a realizar una prueba posthoc. Observando que hay una diferencia significativa con un p = <2e-16 entre cada nivel socioeconómico. La prueba posthoc nos permute concluir, con un nivel de confianza del 95%, que existe evidencia estadística de que el gasto en alimentos no saludables es diferente entre todos los niveles socioeconómico.
  
-### Análisis de correlación
+5. Estima un modelo de regresión, lineal o logístico, para identificiar los determinantes de la inseguridad alimentaria en México
 
 Se calcularon los coeficientes de correlación de Pearson entre pares de variables cuantitativas para determinar los factores que afectan los montos de los gastos en alimentos saludables y no saludables, los cuales sugieren que de manera general:
 
@@ -186,9 +240,22 @@ Gasto en alimentación saludable = f(número. personas en el hogar, años educac
 
 Gastos en alimentación no saludable = f(años educación del jefe de familia, gasto en alimentación saludable)
 
-6. Modelos de regresión lineal
+Según estos análisis 
 
-Tomando como base el resultado del punto 5, se construyeron modelos de regresión lineal y se fueron añadiendo otras variables y sus interacciones.
+El gasto en alimentos saludables parece determinado por: 
+
+- núm de personas en el hogar
+- años de educación del jefe de familia
+- gasto en alimentos no saludables
+
+El gasto en alimentación NO-saludable parece determinado por:
+
+- años de educación del jefe de familia
+- gasto en alimentos saludables
+
+### Modelos de regresión lineal
+
+Tomando como base el resultado de los puntos 4 y 5, se construyeron modelos de regresión lineal y se fueron añadiendo otras variables y sus interacciones.
 
 Gasto en alimentos saludables
 
@@ -221,9 +288,11 @@ m6 <- lm(ln_als ~ nse5f + nse5f:sexojef + area + numpeho + refin + edadjef + sex
 
 m7 <- lm(ln_als ~ nse5f + nse5f:añosedu + area + numpeho + refin + edadjef + sexojef + añosedu + IA+ ln_alns) #0.2507
 ```
-Gasto en alimentos no saludables
+De los modelos de regresión lineal para el gasto en alimentos saludables, se escoge el modelo m1.5 sin interacciones ya que el sexojef no fue significativo pero al considerar interacciones se escoge el modelo m5.5, donde se consideran como determinantes las siguientes interacciones: nse5f:edadjef, edadjef:sexojef
 
-Repitiendo el proceso para el gasto en alimentos no saludables:
+Gasto en alimentos no saludables:
+
+Repitiendo el proceso para el gasto en alimentos no saludables
 
 Modelo base:
 
@@ -248,7 +317,46 @@ m12 <- lm(ln_alns ~ nse5f + ln_als + IA + nse5f:ln_als + ln_als:IA) #0.0852
 El modelo m8 considera sólo las variables planteadas en la hipótesis original, pero encontramos que la variable refin no es significativa por lo que se elige el modelo m9. 
 Dentro de los modelos donde se consideran las interacciones, se elige el modelo m11 con las interacciones con el nivel socioeconómico.
 
+### Modelos de regresión logística
 
+Para encontrar los factores determinantes de la Inseguridad Alimentario dentro de esta muestra, se usó el método de regresión logística con un enfoque aditivo y mixto para las interacciones. Se empezó con un modelo de solo una variable:
+
+```R
+logistic.1 <- glm(IA ~ nse5f, 
+                  data = df.c, family = binomial)
+```
+
+A este modelo se le fueron agregando todas las variables primero sin interacciones. 
+
+El rango del criterio de informacion de Akaike (AIC) dentro de los modelos con variables individuales fue de 38087 (solo una variable) a 37020 (con todas las variables). De igual manera se obtuvo un rango de la pseudo R-cuadrada de 0.0708 (solo una variable) a 0.0972 (con todas las variables). En el modelo que contaba cn todas las variables se observó que la variable individual de Edad de Jefe de Familia no se correlacionaba significativamente a un nivel de confianza del 95%, por lo que se elaboró otro modelo sin esa variable obteniendo lo siguiente:
+
+```R
+logistic.9 <- glm(IA ~ nse5f + numpeho + refin + sexojef + añosedu + ln_als + ln_alns, 
+                  data = df.c, family = binomial)
+summary(logistic.9) #AIC = 37018
+pseudo_r2.9 <- (logistic.9$null.deviance - logistic.9$deviance)/logistic.9$null.deviance
+pseudo_r2.9 #0.0971
+```
+
+La pseudo R-cuadrada del modelo sin la variabla de edadjef (pseudo R2 = 0.0971 no disminuye considerablemente y todas las demas variables permanecen significativas con un nivel de confianza del 95%. 
+
+A continuacion se evaluaron modelos con diferentes interacciones con un rango de AIC de 36991 a 36913. De igual manera se obtuvo un rando de la pseudo R-cuadrada de 0.0979 a 0.1003. Teniendo en cuanta las interacciones se obtuvo el siguiente modelo con el mejor AIC y la mejor R-cuadrada sin caer en sobreajuste. 
+
+```R
+logistic.14 <- glm(IA ~ nse5f:numpeho + nse5f + nse5f:edadjef + numpeho:añosedu + numpeho:ln_als+ numpeho + refin + edadjef:sexojef + sexojef + añosedu + ln_als + ln_alns, 
+                   data = df.c, family = binomial)
+summary(logistic.14) #AIC = 36911
+pseudo_r2.14 <- (logistic.14$null.deviance - logistic.14$deviance)/logistic.14$null.deviance
+pseudo_r2.14 #0.1003
+```
+
+En conclusión, se encontró que los determinantes de la Inseguridad Alimentaria son las variables por sí solas, asi como las siguientes interacciones:
+
+- Nivel socioeconómico con número de personas en el hogar
+- Nivel socioeconómico con edad del jefe de familia
+- Número de personas en el hogar con años de educación 
+- Número de personas en el hogar con el gasto en alimentos saludables
+- Edad y sexo del jefe de familia
 
 ## Referencias
 

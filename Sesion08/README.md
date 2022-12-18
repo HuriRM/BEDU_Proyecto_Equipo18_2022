@@ -168,10 +168,12 @@ Se realizó el planteamiento de diferentes hipótesis que nos permitieron entend
 Hipótesis 1. El ENSANUT 2012 señala que el promedio del número de habitantes por casa es igual a 3.89 (Institución Nacional de Salud Pública, 2012).
 
 Planteamiento de hipótesis estadísticas
+
 Ho: prom.ENSANUT.oficial = prom.numpeho
 Ha:prom.ENSANUT.oficial != prom.numpeho
 
 Para resolver este problema se realizó una prueba de t de Student y el resultado que se obtuvo fue el siguiente.
+
 t = -1.5016, df = 35817, p-value = 0.1332
 
 Conclusión: Con un nivel de confianza del 95%, no se rechaza la hipótesis nula, por lo que el promedio calculado por el ENSANUT del número de habitantes por hogar es igual al promedio del número de habitantes en esta muestra"

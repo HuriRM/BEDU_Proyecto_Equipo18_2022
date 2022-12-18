@@ -153,10 +153,103 @@ Volviendo a la muestra que contiene todos los casos, después de crear boxplots 
 
 Y por último, al graficar por localidad de residencia, el porcentaje de consumidores de alimentos saludables parece ser mayor en localidades urbanas en comparación con las rurales.
 
+3. Calcula probabilidades que nos permitan entender el problema en México.
+
+Se planteó la cuestión de cuál sería la probabilidad de que el jefe de familia tenga más de 60 años. Se obtuvo un resultado de 24.3426% Lo que nos indicaría una población mayormente joven.
+
+Adicionalmente, se calculó cuál sería la probabilidad de que el jefe de familia tenga entre 30 y 50 años. Se obtuvo una probabilidad de 41.03%, la cual refuerza la conclusión anterior.
+
+Por último, se planteó la cuestión de cuál sería la probabilidad de que el jefe de familia tenga al menos un grado universitario. Para esto se consideraron 17 años de estudio (6 de primaria, 3 de secundaria, 3 de preparatoria y 5 de universidad). El resultado obtenido fue de tan sólo 8.07%.
+
+4. Plantea hipótesis estadísticas y concluye sobre ellas para entender el problema en México
+
+Se realizó el planteamiento de diferentes hipótesis que nos permitieron entender el problema en México. 
+
+Hipótesis 1. El ENSANUT 2012 señala que el promedio del número de habitantes por casa es igual a 3.89 (Institución Nacional de Salud Pública, 2012).
+
+Planteamiento de hipótesis estadísticas
+Ho: prom.ENSANUT.oficial = prom.numpeho
+Ha:prom.ENSANUT.oficial != prom.numpeho
+
+Para resolver este problema se realizó una prueba de t de Student y el resultado que se obtuvo fue el siguiente.
+t = -1.5016, df = 35817, p-value = 0.1332
+
+Conclusión: Con un nivel de confianza del 95%, no se rechaza la hipótesis nula, por lo que el promedio calculado por el ENSANUT del número de habitantes por hogar es igual al promedio del número de habitantes en esta muestra"
+ 
+### Análisis de correlación
+
+Se calcularon los coeficientes de correlación de Pearson entre pares de variables cuantitativas para determinar los factores que afectan los montos de los gastos en alimentos saludables y no saludables, los cuales sugieren que de manera general:
+
+Gasto en alimentación saludable = f(número. personas en el hogar, años educación del jefe de familia, gasto en alimentación no saludable)
+
+Gastos en alimentación no saludable = f(años educación del jefe de familia, gasto en alimentación saludable)
+
+6. Modelos de regresión lineal
+
+Tomando como base el resultado del punto 5, se construyeron modelos de regresión lineal y se fueron añadiendo otras variables y sus interacciones.
+
+Gasto en alimentos saludables
+
+Modelo base:
+
+```R
+lm.s <- lm(ln_als ~ numpeho + añosedu + ln_alns, df.c)
+summary(lm
+```
+Que tiene una R-cuadrada ajustada = 0.189
+
+A este modelo se le fueron añadiendo otras variables cuantitativas y categóricas, así como interacciones entre ellas, para buscar un mejor ajuste. Se probaron las siguientes opciones:
+
+```R
+m1 <- lm(ln_als ~ nse5f + area + numpeho + refin + edadjef + sexojef + añosedu + IA+ ln_alns) # R cuad ajust = 0.2506
+
+m1.5 <- lm(ln_als ~ nse5f + area + numpeho + refin + edadjef + añosedu + IA+ ln_alns) #0.2506
+
+m2 <- lm(ln_als ~ nse5f + nse5f:area + area + numpeho + refin + edadjef + sexojef + añosedu + IA+ ln_alns) #0.2512
+
+m3 <- lm(ln_als ~ nse5f + nse5f:numpeho + area + numpeho + refin + edadjef + sexojef + añosedu + IA+ ln_alns) #0.2505
+
+m4 <- lm(ln_als ~ nse5f + nse5f:refin + area + numpeho + refin + edadjef + sexojef + añosedu + IA+ ln_alns) #0.2506
+
+m5 <- lm(ln_als ~ nse5f + nse5f:edadjef + area + numpeho + refin + edadjef + sexojef + añosedu + IA+ ln_alns) #0.2524, mejora
+
+m5.5 <- lm(ln_als ~ nse5f + nse5f:edadjef + area + numpeho + edadjef:sexojef+ refin + edadjef + sexojef + añosedu + IA+ ln_alns) #0.2528
+
+m6 <- lm(ln_als ~ nse5f + nse5f:sexojef + area + numpeho + refin + edadjef + sexojef + añosedu + IA+ ln_alns) #0.2506
+
+m7 <- lm(ln_als ~ nse5f + nse5f:añosedu + area + numpeho + refin + edadjef + sexojef + añosedu + IA+ ln_alns) #0.2507
+```
+Gasto en alimentos no saludables
+
+Repitiendo el proceso para el gasto en alimentos no saludables:
+
+Modelo base:
+
+```R
+lm.ns <- lm(ln_alns ~ añosedu + ln_als, df.c) # R-cuadrada ajustada = 0.06247
+```
+
+Vamos probando otras variables y sus interacciones:
+
+```R
+m8 <- lm(ln_alns ~ nse5f + refin + ln_als + IA) #0.07963
+
+m9 <- lm(ln_alns ~ nse5f + ln_als + IA) #0.0797
+
+m10 <- lm(ln_alns ~ nse5f + ln_als + IA + nse5f:ln_als) #0.0852
+
+m11 <- lm(ln_alns ~ nse5f + ln_als + IA + nse5f:ln_als + nse5f:IA) #0.0854
+
+m12 <- lm(ln_alns ~ nse5f + ln_als + IA + nse5f:ln_als + ln_als:IA) #0.0852
+```
+
+El modelo m8 considera sólo las variables planteadas en la hipótesis original, pero encontramos que la variable refin no es significativa por lo que se elige el modelo m9. 
+Dentro de los modelos donde se consideran las interacciones, se elige el modelo m11 con las interacciones con el nivel socioeconómico.
 
 
 
 ## Referencias
 
  Cañizares, M., Barroso, I., & Alfonso, K. (2004). Datos incompletos: una mirada crítica para su manejo en estudios sanitarios. Gaceta Sanitaria,           18(1), 58–63. https://scielo.isciii.es/scielo.php?script=sci_arttext&pid=S0213-91112004000100010#t1
+ Institución Nacional de Salud Pública. (2012). Encuesta Nacional de Salud y Nutrición Resultados Nacionales 2012 (C. Oropeza Abundez, F. Reveles, J. J. García Letechipia, & S. De Voghel Gutiérrez, Eds.; pp. 1–200) [Review of Encuesta Nacional de Salud y Nutrición Resultados Nacionales 2012]. Instituto Nacional de Salud Pública. https://ensanut.insp.mx/encuestas/ensanut2012/doctos/informes/ENSANUT2012ResultadosNacionales.pdf
 

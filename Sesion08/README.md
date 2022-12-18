@@ -251,5 +251,7 @@ Dentro de los modelos donde se consideran las interacciones, se elige el modelo 
 ## Referencias
 
  Cañizares, M., Barroso, I., & Alfonso, K. (2004). Datos incompletos: una mirada crítica para su manejo en estudios sanitarios. Gaceta Sanitaria,           18(1), 58–63. https://scielo.isciii.es/scielo.php?script=sci_arttext&pid=S0213-91112004000100010#t1
+ 
+ 
  Institución Nacional de Salud Pública. (2012). Encuesta Nacional de Salud y Nutrición Resultados Nacionales 2012 (C. Oropeza Abundez, F. Reveles, J. J. García Letechipia, & S. De Voghel Gutiérrez, Eds.; pp. 1–200) [Review of Encuesta Nacional de Salud y Nutrición Resultados Nacionales 2012]. Instituto Nacional de Salud Pública. https://ensanut.insp.mx/encuestas/ensanut2012/doctos/informes/ENSANUT2012ResultadosNacionales.pdf
 

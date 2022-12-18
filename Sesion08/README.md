@@ -169,8 +169,8 @@ Hipótesis 1. El ENSANUT 2012 señala que el promedio del número de habitantes 
 
 Planteamiento de hipótesis estadísticas
 
-Ho: prom.ENSANUT.oficial = prom.numpeho
-Ha:prom.ENSANUT.oficial != prom.numpeho
+- Ho: prom.ENSANUT.oficial = prom.numpeho
+- Ha:prom.ENSANUT.oficial != prom.numpeho
 
 Para resolver este problema se realizó una prueba de t de Student y el resultado que se obtuvo fue el siguiente.
 

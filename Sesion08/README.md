@@ -56,18 +56,47 @@ NOTA: Todo tu planteamiento deberá estar correctamente desarrollado y deberás 
 1.- Plantea el problema del caso.
 Con base a los obtenidos por la ENSANUT, el centro de Salud nutricional esta interesado en:
 
-      a) Analizar estadísticamente y probabilísticamente los patrones de gasto en alimentos saludables
-      y no saludables en los hogares mexicanos con base en:
+a) Analizar estadísticamente y probabilísticamente los patrones de gasto en alimentos saludables
+y no saludables en los hogares mexicanos con base en:
 
-            I. Su nivel socioeconómico.
+      I. Su nivel socioeconómico.
 
-            II.Si el hogar tiene recursos financieros extrar al ingreso.
+      II.Si el hogar tiene recursos financieros extrar al ingreso.
 
-            III. Si presenta o no inseguridad alimentaria.
+      III. Si presenta o no inseguridad alimentaria.
 
-      b) La generación de un modelo que le permita identificar los determinantes socioeconómicos de la
-      inseguridad alimentaria.
+b) La generación de un modelo que le permita identificar los determinantes socioeconómicos de la
+inseguridad alimentaria.
 
-      c) Evaluar si existe evidencia estadística para determinar si los hogares con menor nivel
-      socioeconómico tienden a gastar más en productos no saludables que las personas con
-      mayores niveles socioeconómicos.
+c) Evaluar si existe evidencia estadística para determinar si los hogares con menor nivel
+socioeconómico tienden a gastar más en productos no saludables que las personas con
+mayores niveles socioeconómicos.
+
+2. Realiza un analisis descriptivo de la información
+
+Analizando la base de datos, se observa valores faltantes con la siguiente proporción por cada variable:
+
+ln_alns:	42.89% de NA’s
+edadjef:	12.29% de NA's
+sexojef:	12.23% de NA's
+ln_als: 		 1.92% de NA's
+
+Para el manejo de datos faltantes existen dos opciones:
+
+- Imputación de datos por distintos mecanismos.
+- Eliminación de las unidades de información faltantes.
+
+La manera más sencilla para resolver esto pero bibliográficamente más discutida (Cañizares et.al., 2004), consiste en eliminar las unidades de información incompletas y quedarse con una base de datos más pequeña pero completa. Esto podría producir un impacto en la precisión y potencia de las estimaciones. Además, los sesgos pueden ser graves cuando el mecanismo que genera los datos ausentes no puede ser ignorado, siendo este nuestro caso.
+
+En caso de trabajar con una base de datos completa, estaríamos conservando solo el 51% de la base de datos original. Por todo lo anterior, se decide realizar imputación de datos vía parámetros de tendencia central, según la distribución de la variable.
+
+Debido a que, la variable edadjef y ln_als muestran probable sesgo, se utiliza la mediana para sustituir los valores nulos. Para la variable ln_alns, se sustituyen los valores nulos por la media.
+
+Para el caso del sexo, se hace uso de la funcion complete.cases ya que al evaluar entre las ventajas/desventajas de imputar datos u omitirlos, se decidió omitir el 12.23% de la base de datos original.
+
+
+
+## Referencias
+
+ Cañizares, M., Barroso, I., & Alfonso, K. (2004). Datos incompletos: una mirada crítica para su manejo en estudios sanitarios. Gaceta Sanitaria,           18(1), 58–63. https://scielo.isciii.es/scielo.php?script=sci_arttext&pid=S0213-91112004000100010#t1
+
